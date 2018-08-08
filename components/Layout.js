@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Navbar from "./Navbar";
 
 const Layout = ({ children }) => (
   <React.Fragment>
@@ -14,6 +15,7 @@ const Layout = ({ children }) => (
         href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       />
     </Head>
+    <Navbar />
     {children}
   </React.Fragment>
 );
