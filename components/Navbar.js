@@ -17,7 +17,7 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar is-primary">
         <div className="navbar-brand">
-          <Link href="/">
+          <Link href="/" prefetch>
             <a className="navbar-item">
               <span className="title is-3 has-text-white">Modium</span>
             </a>
@@ -36,12 +36,14 @@ class Navbar extends React.Component {
             <div className="navbar-item">
               <div className="field is-grouped">
                 <p className="control">
-                  <a className="button is-primary" href="/write">
-                    <span className="icon">
-                      <i className="fas fa-pen" />
-                    </span>
-                    <span>New Post</span>
-                  </a>
+                  <Link as="/posts/new" href="/new" prefetch>
+                    <a className="button is-primary">
+                      <span className="icon">
+                        <i className="fas fa-pen" />
+                      </span>
+                      <span>New Post</span>
+                    </a>
+                  </Link>
                 </p>
               </div>
             </div>

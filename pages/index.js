@@ -13,6 +13,7 @@ const Index = ({ posts }) => (
               key={post.id}
               as={`/posts/${post.id}`}
               href={`/show?id=${post.id}`}
+              prefetch
             >
               <div className="box post-link">
                 <h3 className="title is-3">{post.title}</h3>

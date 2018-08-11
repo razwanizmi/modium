@@ -1,7 +1,14 @@
 import fetch from "isomorphic-unfetch";
+import Link from "next/link";
+import PropTypes from "prop-types";
 import Layout from "../components/Layout";
+import LikeButton from "../components/LikeButton";
 
 class Show extends React.Component {
+  state = {
+    likeCount: 0
+  };
+
   static propTypes = {
     post: PropTypes.object.isRequired
   };
@@ -16,8 +23,15 @@ class Show extends React.Component {
     return { post };
   };
 
+  handleLike = () => {
+    this.setState(({ likeCount }) => ({
+      likeCount: likeCount + 1
+    }));
+  };
+
   render() {
     const { post } = this.props;
+    const { likeCount } = this.state;
 
     return (
       <Layout>
@@ -26,6 +40,11 @@ class Show extends React.Component {
             <div className="content">
               <h3 className="title is-3">{post.title}</h3>
               <p>{post.body}</p>
+            </div>
+            <div className="field">
+              <div className="control">
+                <LikeButton likeCount={likeCount} onLike={this.handleLike} />
+              </div>
             </div>
           </div>
         </section>
