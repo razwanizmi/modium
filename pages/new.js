@@ -39,7 +39,7 @@ class New extends React.Component {
       }
     );
     const data = await res.json();
-    Router.push(`/posts/${data.id}`);
+    Router.push(`/show?id=${data.id}`, `/posts/${data.id}`);
   };
 
   render() {
