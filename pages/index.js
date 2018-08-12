@@ -1,6 +1,7 @@
 import fetch from "isomorphic-unfetch";
 import Link from "next/link";
 import PropTypes from "prop-types";
+import ReactMarkdown from "react-markdown";
 import Layout from "../components/Layout";
 
 const Index = ({ posts }) => (
@@ -17,7 +18,7 @@ const Index = ({ posts }) => (
             >
               <div className="box post-link">
                 <h3 className="title is-3">{post.title}</h3>
-                <p>{post.body}</p>
+                <ReactMarkdown source={post.body.slice(0, 140)} />
               </div>
             </Link>
           ))}

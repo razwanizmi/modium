@@ -1,6 +1,6 @@
 import fetch from "isomorphic-unfetch";
-import Link from "next/link";
 import PropTypes from "prop-types";
+import ReactMarkdown from "react-markdown";
 import Layout from "../components/Layout";
 import LikeButton from "../components/LikeButton";
 
@@ -39,7 +39,7 @@ class Show extends React.Component {
           <div className="container">
             <div className="content">
               <h3 className="title is-3">{post.title}</h3>
-              <p>{post.body}</p>
+              <ReactMarkdown source={post.body} />
             </div>
             <div className="field">
               <div className="control">
