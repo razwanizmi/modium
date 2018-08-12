@@ -6,7 +6,8 @@
   "scripts": {
     "build": "next build",
     "dev": "nodemon -w server.js server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
