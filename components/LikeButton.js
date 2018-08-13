@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const LikeButton = ({ likeCount, onLike }) => (
-  <>
+  <React.Fragment>
     <button
       className="button is-primary is-rounded is-outlined"
       onClick={onLike}
@@ -20,7 +20,7 @@ const LikeButton = ({ likeCount, onLike }) => (
         color: #00d1b2 !important;
       }
     `}</style>
-  </>
+  </React.Fragment>
 );
 LikeButton.propTypes = {
   likeCount: PropTypes.number.isRequired,

@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown";
 import Layout from "../components/Layout";
 
 const Index = ({ posts }) => (
-  <>
+  <React.Fragment>
     <Layout>
       <section className="section">
         <div className="container">
@@ -31,7 +31,7 @@ const Index = ({ posts }) => (
         cursor: pointer;
       }
     `}</style>
-  </>
+  </React.Fragment>
 );
 Index.propTypes = {
   posts: PropTypes.array.isRequired
