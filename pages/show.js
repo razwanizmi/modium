@@ -1,4 +1,5 @@
 import fetch from "isomorphic-unfetch";
+import Head from "next/head";
 import PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
 import Layout from "../components/Layout";
@@ -34,21 +35,27 @@ class Show extends React.Component {
     const { likeCount } = this.state;
 
     return (
-      <Layout>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <h3 className="title is-3">{post.title}</h3>
-              <ReactMarkdown source={post.body} />
-            </div>
-            <div className="field">
-              <div className="control">
-                <LikeButton likeCount={likeCount} onLike={this.handleLike} />
+      <React.Fragment>
+        <Head>
+          <title>{post.title} | Modium</title>
+        </Head>
+
+        <Layout>
+          <section className="section">
+            <div className="container">
+              <div className="content">
+                <h3 className="title is-3">{post.title}</h3>
+                <ReactMarkdown source={post.body} />
+              </div>
+              <div className="field">
+                <div className="control">
+                  <LikeButton likeCount={likeCount} onLike={this.handleLike} />
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      </Layout>
+          </section>
+        </Layout>
+      </React.Fragment>
     );
   }
 }

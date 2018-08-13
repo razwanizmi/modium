@@ -1,4 +1,5 @@
 import fetch from "isomorphic-unfetch";
+import Head from "next/head";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
@@ -6,6 +7,10 @@ import Layout from "../components/Layout";
 
 const Index = ({ posts }) => (
   <React.Fragment>
+    <Head>
+      <title>Home | Modium</title>
+    </Head>
+
     <Layout>
       <section className="section">
         <div className="container">
